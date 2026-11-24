@@ -157,7 +157,7 @@ textarea{resize:vertical}
 
     <div id="thanks" class="card" hidden>
       <h2>Hemos llegado al final del cuestionario</h2>
-      <p>Agradecemos su tiempo y su disposición a contribuir con este estudio. Los resultados agregados se publicarán en acceso abierto y estarán disponibles para la comunidad universitaria.</p>
+      <p>Agradecemos su tiempo y su disposición a contribuir con este estudio.</p>
       <p id="saveMsg" class="muted">Sus respuestas fueron registradas. Gracias por participar.</p>
     </div>
   </form>
@@ -969,7 +969,7 @@ function renderQ(it, n){
       it.rows.forEach((r,i) => {
         const code = it.c + String.fromCharCode(97+i);
         const c = h('div', {class:'scale5'});
-        it.s.forEach(l => c.append(opt(code, 'radio', l, l)));
+        it.s.forEach((l,i) => c.append(opt(code, 'radio', i+1, l)));
         q.append(h('div', {class:'row'}, h('div', {class:'rl'}, r), c));
       });
       break;
